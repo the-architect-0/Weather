@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakes ISLAND</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> ZAKES ISLAND Forecast</h1>
+            <p class="subtitle">Get real-time weather information for any city</p>
+        </header>
+
+        <main>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="city-input" placeholder="Enter city name..." aria-label="City name">
+                    <button id="search-btn" aria-label="Search weather">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="location-buttons">
+                    <button id="current-location-btn" aria-label="Use current location">
+                        <i class="fas fa-location-arrow"></i> Current Location
+                    </button>
+                </div>
+            </div>
+
+            <div class="error-container" id="error-container" role="alert" aria-live="assertive"></div>
+
+            <div class="loading-container" id="loading-container">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div class="weather-card" id="weather-card">
+                <div class="card-header">
+                    <h2 id="city-name">--</h2>
+                    <div class="date-time" id="current-datetime">--</div>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temperature-section">
+                        <div class="temp-value" id="temperature">--</div>
+                        <div class="temp-toggle">
+                            <button class="temp-unit active" data-unit="celsius">°C</button>
+                            <span class="separator">|</span>
+                            <button class="temp-unit" data-unit="fahrenheit">°F</button>
+                        </div>
+                    </div>
+
+                    <div class="weather-icon" id="weather-icon">
+                        <i class="fas fa-question"></i>
+                    </div>
+
+                    <div class="weather-description" id="weather-description">--</div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Humidity</div>
+                            <div class="detail-value" id="humidity">--%</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Wind Speed</div>
+                            <div class="detail-value" id="wind-speed">-- m/s</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Feels Like</div>
+                            <div class="detail-value" id="feels-like">--°C</div>
+                        </div>
+                    </div>
+
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                        </div>
+                        <div class="detail-info">
+                            <div class="detail-label">Pressure</div>
+                            <div class="detail-value" id="pressure">-- hPa</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <p class="api-note">Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeatherMap API</a></p>
+                </div>
+            </div>
+
+            <div class="recent-searches" id="recent-searches">
+                <h3>Recent Searches</h3>
+                <div class="recent-list" id="recent-list"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Weather App &copy; <span id="current-year">2026</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
